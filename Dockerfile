@@ -8,18 +8,19 @@ ENV AGENT_PYTHONPATH="$P1:$P2:$P3"
 
 # Install pyGNMI to /usr/local/lib[64]/python3.6/site-packages
 # RUN sudo yum-config-manager --disable ipdcentos ipdrepo ius && sudo yum clean all
-RUN sudo yum install -y python3-pip gcc-c++ pylint git # && \
+RUN sudo yum install -y python3-pip gcc-c++ pylint git
+    # && \
     # sudo python3 -m pip install pip --upgrade && \
     # sudo python3 -m pip install pygnmi pylint-protobuf
 
 # Build open source RIFT, see https://github.com/brunorijsman/rift-python/blob/master/doc/installation.md
-RUN sudo git clone https://github.com/brunorijsman/rift-python.git /tmp/rift-python/ && \
-    cd /tmp/rift-python && sudo pip3 install -r requirements-3-8.txt
+RUN sudo git clone https://github.com/brunorijsman/rift-python.git /opt/rift-python/ && \
+    cd /opt/rift-python && sudo pip3 install -r requirements-3-8.txt
 
 # Define custom aliases for admin user
 RUN sudo mkdir -p /home/admin && printf '%s\n' \
   '[alias]' \
-  'containerlab save = "save file /etc/opt/srlinux/config.json /"' \
+  '"containerlab save" = "save file /etc/opt/srlinux/config.json /"' \
   \
 > /home/admin/.srlinuxrc
 
