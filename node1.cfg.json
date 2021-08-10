@@ -1073,6 +1073,18 @@
               }
             }
           },
+	  {
+            "sequence-id": 355,
+            "description": "Accept incoming RIFTv6 messages",
+            "action": {
+              "accept": {
+
+              }
+            },
+            "match": {
+              "next-header": "udp"
+            }
+          },
           {
             "sequence-id": 360,
             "description": "Drop all else",
