@@ -1,0 +1,15 @@
+name: openrift-lab
+
+topology: # Based on https://github.com/brunorijsman/rift-python/blob/master/topology/2n_un_l0.yaml
+  kinds:
+    srl:
+      # Default type
+      type: ixrd2 # See https://www.nokia.com/networks/products/7250-interconnect-router/
+      image: srl/openrift:latest
+
+  nodes:
+    node1:  { kind: srl, startup-config: node1.cfg.json }
+    node2:  { kind: srl, startup-config: node2.cfg.json }
+
+  links:
+    - endpoints: ["node1:e1-1","node2:e1-1"]
