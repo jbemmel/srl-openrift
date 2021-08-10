@@ -29,6 +29,8 @@ RUN sudo sed -i.orig 's|.ssh/authorized_keys|.ssh/authorized_keys /etc/ssh/autho
 # This file must be owned by root:root with 644 permissions
 COPY --chmod=0644 ./authorized_keys /etc/ssh/authorized_keys
 
+COPY ./srl-openrift-topology.yaml /opt/rift-python/topology/
+
 # Using a build arg to set the release tag, set a default for running docker build manually
 ARG SRL_OPENRIFT_RELEASE="[custom build]"
 ENV SRL_OPENRIFT_RELEASE=$SRL_RIFT_RELEASE
