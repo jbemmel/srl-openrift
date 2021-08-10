@@ -18,7 +18,7 @@ shards:
       - name: node1
         level: 0
         systemid: 1
-        rx_lie_mcast_address: 224.0.1.1
+        rx_lie_mcast_address: 224.0.0.5 # Use OSPF mcast address
         rx_lie_port: 20001
         interfaces:
           - name: e1-1.0 # Connected to node2-if1
@@ -27,7 +27,7 @@ shards:
       - name: node2
         level: undefined
         systemid: 2
-        rx_lie_mcast_address: 224.0.1.2
+        rx_lie_mcast_address: 224.0.0.5 # OSPF
         rx_lie_port: 20002
         interfaces:
           - name: e1-1.0 # Connected to node1-if1
