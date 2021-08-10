@@ -1,4 +1,4 @@
-NAME        := srl/open-rift
+NAME        := srl/openrift
 LAST_COMMIT := $(shell sh -c "git log -1 --pretty=%h")
 TODAY       := $(shell sh -c "date +%Y%m%d_%H%M")
 TAG         := ${TODAY}.${LAST_COMMIT}
