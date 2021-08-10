@@ -7,5 +7,14 @@ Juniper Networks came up with their own version of a routing protocol, called Ro
 Unfortunately, as I discovered (on 2021-08-10) access to the RIFT evaluation software is restricted to registered Juniper customers. Therefore, the open source prototype will have to do for now - and OMMV.
 
 # Installation instructions
+```
+make build
+sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
+```
 
-
+# Testing RIFT
+```
+ssh linuxadmin@clab-openrift-lab-node1
+cd /opt/python-rift/
+python3 rift --interactive topology/2n_un_l0.yaml
+```
