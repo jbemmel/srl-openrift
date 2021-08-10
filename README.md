@@ -44,4 +44,10 @@ protocols {
     }
 commit now
 ```
-(edit the router-id for node2 to be 1.1.1.2). So the question is: What would one need to do to enable multicast for third party protocols? To be continued...
+(edit the router-id for node2 to be 1.1.1.2). 
+To verify:
+```
+/show network-instance default protocols ospf neighbor
+```
+
+So the question is: What would one need to do to enable multicast for third party protocols? To be continued...
