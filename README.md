@@ -8,6 +8,8 @@ Unfortunately, as I discovered (on 2021-08-10) access to the RIFT evaluation sof
 
 # Installation instructions
 ```
+git clone https://github.com/jbemmel/srl-openrift.git
+cd srl-openrift
 make build
 sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
 ```
