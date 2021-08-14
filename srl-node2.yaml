@@ -1,0 +1,27 @@
+# Topology: 2n_un_l0 with renamed interfaces
+#
+#  +-------------------+
+#  | node1             |
+#  | (level 0)         |
+#  +-------------------+
+#            | e1-1.0
+#            |
+#            | e1-1.0
+#  +-------------------+
+#  | node2             |
+#  | (level 1)         |
+#  +-------------------+
+
+shards:
+  - id: 0
+    nodes:
+      - name: node2
+        level: 1
+        systemid: 2
+        rx_lie_mcast_address: 10.0.0.255
+        rx_lie_v6_mcast_address: ff02::abcd:2
+        rx_lie_port: 20002
+        interfaces:
+          - name: e1-1.0 # Connected to node1-if1
+            tx_lie_port: 20001
+            rx_tie_port: 10002
