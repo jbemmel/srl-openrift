@@ -18,7 +18,7 @@ sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
 ```
 ssh linuxadmin@clab-openrift-lab-node1
 cd /opt/rift-python/
-ip netns exec srbase-default python3 rift --interactive topology/srl-openrift-topology.yaml
+ip netns exec srbase-default python3 rift --interactive topology/srl-`hostname -f`.yaml
 ```
 
 Unfortunately, this example currently fails; UDP multicast packets are lost between being received on e1-1, and being forwarded on subinterface e1-1.0.
