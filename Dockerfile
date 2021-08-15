@@ -14,8 +14,9 @@ RUN sudo yum install -y python3-pip gcc-c++ pylint git
     # sudo python3 -m pip install pygnmi pylint-protobuf
 
 # Build open source RIFT, see https://github.com/brunorijsman/rift-python/blob/master/doc/installation.md
-RUN sudo git clone https://github.com/brunorijsman/rift-python.git /opt/rift-python/ && \
-    cd /opt/rift-python && sudo pip3 install -r requirements-3-8.txt
+# Fork of https://github.com/brunorijsman/rift-python.git
+RUN sudo git clone https://github.com/jbemmel/rift-python.git /opt/rift-python/ && \
+    cd /opt/rift-python && sudo pip3 install -r requirements-3-6.txt
 
 # Define custom aliases for admin user
 RUN sudo mkdir -p /home/admin && printf '%s\n' \
