@@ -1,0 +1,3 @@
+[submodule "rift-python"]
+	path = rift-python
+	url = git@github.com:jbemmel/rift-python.git
