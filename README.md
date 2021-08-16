@@ -21,3 +21,5 @@ cd /opt/rift-python/
 ip netns exec srbase-default python3 rift --interactive topology/srl-`hostname -f`.yaml
 ```
 ![plot](images/RIFT_with_broadcast.png)
+
+[Pull request]( https://github.com/brunorijsman/rift-python/pull/110 ) submitted
