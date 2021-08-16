@@ -14,42 +14,10 @@ make build
 sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
 ```
 
-# Testing RIFT
+# Testing RIFT using subnet broadcast
 ```
 ssh linuxadmin@clab-openrift-lab-node1
 cd /opt/rift-python/
 ip netns exec srbase-default python3 rift --interactive topology/srl-`hostname -f`.yaml
 ```
-
-Unfortunately, this example currently fails; UDP multicast packets are lost between being received on e1-1, and being forwarded on subinterface e1-1.0.
-The /acl cpm-filter ipv4-filters are opened (allow all UDP), but there seems to be something else dropping the packets.
-
-'native' SR Linux protocols like OSPF (IP protocol 89) work correctly of course:
-```
-enter candidate
-/network-instance default
-protocols {
-        ospf {
-            instance 0 {
-                admin-state enable
-                version ospf-v2
-                router-id 1.1.1.1
-                area 0.0.0.0 {
-                    interface ethernet-1/1.0 {
-                    }
-                    interface lo0.0 {
-                        passive true
-                    }
-                }
-            }
-        }
-    }
-commit now
-```
-(edit the router-id for node2 to be 1.1.1.2). 
-To verify:
-```
-/show network-instance default protocols ospf neighbor
-```
-
-So the question is: What would one need to do to enable multicast for third party protocols? To be continued...
+![plot](images/RIFT_with_broadcast.png)
