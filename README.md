@@ -1,4 +1,4 @@
-# Evaluating Juniper's RIFT protocol on SR Linux
+# Evaluating Routing In Fat Trees (RIFT) on SR Linux
 
 ![plot](./images/RIFT.PNG)
 
