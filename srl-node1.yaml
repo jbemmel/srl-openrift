@@ -20,7 +20,7 @@ shards:
         systemid: 1
         # rx_lie_mcast_address: 224.0.0.5 # Use OSPF mcast address? Still fails
         # tx_lie_mcast_address: 10.0.0.255 # Use direct subnet broadcast?
-        tx_lie_use_broadcast: True
+        lie_use_broadcast: True
         rx_lie_v6_mcast_address: ff02::abcd:1
         rx_lie_port: 20001
         interfaces:

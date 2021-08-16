@@ -15,7 +15,7 @@ RUN sudo yum install -y python3-pip gcc-c++ pylint git
 
 # Build open source RIFT, see https://github.com/brunorijsman/rift-python/blob/master/doc/installation.md
 # Fork of https://github.com/brunorijsman/rift-python.git
-COPY rift-python/ /opt/rift-python/
+COPY --chown=linuxadmin:linuxadmin rift-python/ /opt/rift-python/
 # RUN sudo git clone https://github.com/jbemmel/rift-python.git /opt/rift-python/ && \
 RUN cd /opt/rift-python && sudo pip3 install -r requirements-3-567.txt
 

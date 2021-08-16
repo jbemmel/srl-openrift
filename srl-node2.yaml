@@ -19,7 +19,7 @@ shards:
         level: 1
         systemid: 2
         # tx_lie_mcast_address: 10.0.0.255
-        tx_lie_use_broadcast: True
+        lie_use_broadcast: True
         rx_lie_v6_mcast_address: ff02::abcd:2
         rx_lie_port: 20002
         interfaces:
