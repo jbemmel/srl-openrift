@@ -18,7 +18,7 @@ sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
 ```
 ssh linuxadmin@clab-openrift-lab-node1
 cd /opt/rift-python/
-ip netns exec srbase-default python3 rift --interactive topology/srl-`hostname -f`.yaml
+sudo ip netns exec srbase-default python3 rift --interactive topology/srl-`hostname -f`.yaml
 ```
 ![plot](images/RIFT_with_broadcast.png)
 
