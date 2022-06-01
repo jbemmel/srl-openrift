@@ -16,7 +16,7 @@ shards:
   - id: 0
     nodes:
       - name: node2
-        level: leaf-to-leaf
+        level: leaf
         systemid: 2
         # tx_lie_mcast_address: 10.0.0.255
         lie_use_broadcast: True
