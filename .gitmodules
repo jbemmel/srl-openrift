@@ -1,3 +1,4 @@
 [submodule "rift-python"]
 	path = rift-python
 	url = https://github.com/brunorijsman/rift-python.git
+	branch = master
