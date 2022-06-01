@@ -1111,7 +1111,7 @@
             "allow-directed-broadcast": true,
             "address": [
               {
-                "ip-prefix": "10.0.0.1/24"
+                "ip-prefix": "10.0.0.1/30"
               }
             ]
           },
