@@ -23,3 +23,14 @@ sudo ip netns exec srbase-default python3 rift --interactive topology/srl-`hostn
 ![plot](images/RIFT_with_broadcast.png)
 
 [Pull request]( https://github.com/brunorijsman/rift-python/pull/110 ) submitted
+
+# 6/1/2022 Update: Subnet broadcast option added to IETF draft
+
+See [version 15 section 4.2.2](https://datatracker.ietf.org/doc/html/draft-ietf-rift-rift-15#section-4.2.2):
+```
+A simplified version on platforms with limited multicast support MAY
+   implement optional sending and reception of LIE frames on IPv4 subnet
+   broadcast addresses and IPv6 all routers multicast address though
+   such technique is less optimal and presents a wider attack surface
+   from security perspective.
+```
