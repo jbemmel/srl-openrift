@@ -10,6 +10,9 @@ As it turns out, the open source Python implementation runs unmodified on SR Lin
 ```
 git clone --recurse-submodules https://github.com/jbemmel/srl-openrift.git
 cd srl-openrift
+
+cp ~/.ssh/id_rsa.pub authorized_keys # For passwordless SSH login
+
 make build
 sudo containerlab deploy -t ./srl-leafspine.lab --reconfigure
 ```
